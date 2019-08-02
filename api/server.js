@@ -3,6 +3,8 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const helmet = require('helmet');
 
+const userController = require('./controllers/userController');
+
 const server = express();
 
 mongoose
@@ -14,6 +16,8 @@ server.use(express.json());
 server.use(express.urlencoded({ extended: false }));
 server.use(cors());
 server.use(helmet());
+
+server.use('/api/user', userController);
 
 const port = process.env.PORT || 5000;
 server.listen(port, () => console.log(`Connected on port: ${port}`));
