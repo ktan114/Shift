@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
 const ResultSchema = new Schema({
-  answers: [
+  result: [
     {
       name: String,
       response: Number,
