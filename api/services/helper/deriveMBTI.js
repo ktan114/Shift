@@ -1,34 +1,24 @@
+const reducer = (arr, target) => {
+  const filteredArr = arr.filter(answer => answer.name === target);
+  const reducedValue = filteredArr.reduce((acc, curr) => {
+    if (curr.response < 4) acc--;
+    else if (curr.response > 4) acc++;
+    return acc;
+  }, 0);
+  return reducedValue;
+};
+
 const deriveMBTI = answers => {
-  const EI = answers.filter(answer => answer.name === 'EI');
-  const first = EI.reduce((acc, curr) => {
-    if (curr.response < 4) acc--;
-    else if (curr.response > 4) acc++;
-    return acc;
-  }, 0);
-  const SN = answers.filter(answer => answer.name === 'SN');
-  const second = SN.reduce((acc, curr) => {
-    if (curr.response < 4) acc--;
-    else if (curr.response > 4) acc++;
-    return acc;
-  }, 0);
-  const TF = answers.filter(answer => answer.name === 'TF');
-  const third = TF.reduce((acc, curr) => {
-    if (curr.response < 4) acc--;
-    else if (curr.response > 4) acc++;
-    return acc;
-  }, 0);
-  const JP = answers.filter(answer => answer.name === 'JP');
-  const fourth = JP.reduce((acc, curr) => {
-    if (curr.response < 4) acc--;
-    else if (curr.response > 4) acc++;
-    return acc;
-  }, 0);
+  const EI = reducer(answers, 'EI');
+  const SN = reducer(answers, 'SN');
+  const TF = reducer(answers, 'TF');
+  const JP = reducer(answers, 'JP');
 
   return (
-    (first > 0 ? 'I' : 'E') +
-    (second > 0 ? 'N' : 'S') +
-    (third > 0 ? 'F' : 'T') +
-    (fourth > 0 ? 'P' : 'J')
+    (EI > 0 ? 'I' : 'E') +
+    (SN > 0 ? 'N' : 'S') +
+    (TF > 0 ? 'F' : 'T') +
+    (JP > 0 ? 'P' : 'J')
   );
 };
 
