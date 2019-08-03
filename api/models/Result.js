@@ -3,12 +3,13 @@ const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
 const ResultSchema = new Schema({
-  result: [
+  answers: [
     {
       name: String,
       response: Number,
     },
   ],
+  result: String,
 });
 
 module.exports = mongoose.model('Result', ResultSchema);

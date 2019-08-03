@@ -1,9 +1,9 @@
 const User = require('../../models/User');
 const createResult = require('../result/createResult');
 
-const createUser = async (email, result) => {
-  if (!email || !result) return null;
-  const resultId = await createResult(result);
+const createUser = async (email, answers) => {
+  if (!email || !answers) return null;
+  const resultId = await createResult(answers);
   const user = {
     email,
     result: resultId,
