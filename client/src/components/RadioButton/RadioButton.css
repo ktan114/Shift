@@ -1,0 +1,10 @@
+.RadioButton {
+  height: 20px;
+  border-radius: 15px;
+  border: 4px solid lightgrey;
+  padding: 10px;
+}
+.RadioButton:hover,
+.RadioButton:active {
+  background: lightblue;
+}
