@@ -14,6 +14,7 @@ class Question extends Component {
           type={question.question_type}
           handleClick={handleClick}
           value={i + 1}
+          name={`${question.question_number}button`}
         />,
       );
     }
