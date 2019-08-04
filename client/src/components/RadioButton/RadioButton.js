@@ -3,14 +3,15 @@ import React from 'react';
 import './RadioButton.css';
 
 const RadioButton = props => {
-  const { question_number, value, type } = props;
+  const { question_number, value, type, name } = props;
   return (
-    <button
+    <input
       onClick={() => {
         props.handleClick(question_number, value, type);
       }}
       className="RadioButton"
       type="radio"
+      name={name}
     />
   );
 };
