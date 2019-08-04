@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { Route, withRouter } from 'react-router';
 
 import './App.css';
 import Question from './components/Question/Question';
+import Result from './components/Result/Result';
 
 /*
   3 EIs
@@ -54,7 +56,13 @@ class App extends Component {
     }
     axios
       .post('http://localhost:5000/api/user', user)
-      .then(res => console.log('res', res));
+      .then(res => {
+        this.props.history.push({
+          pathname: '/result',
+          state: { result: res.data.result.result },
+        });
+      })
+      .catch(err => console.log('err', err));
   };
 
   render() {
@@ -119,6 +127,7 @@ class App extends Component {
     ];
     return (
       <div className="App">
+        <Route path="/result" component={Result} />
         <h1>Shift Challenge</h1>
         <h2>Discover Your Perspective</h2>
         <p>
@@ -146,4 +155,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default withRouter(App);
