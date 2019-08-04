@@ -5,6 +5,7 @@ const { Schema } = mongoose;
 const ResultSchema = new Schema({
   answers: [
     {
+      number: Number,
       name: String,
       response: Number,
     },
