@@ -31,7 +31,7 @@ class App extends Component {
     let answers = [...this.state.answers];
     answers.filter(answer => answer.number === number).length > 0
       ? answers.forEach(
-          answer => answer.number === number && (answer.value = value),
+          answer => answer.number === number && (answer.response = value),
         )
       : answers.push({ number, response: value, name: type });
 
