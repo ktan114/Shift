@@ -43,9 +43,19 @@ class App extends Component {
   };
 
   handleSubmit = e => {
-    const user = {...this.state};
-    axios.post('localhost:5000/api/user', user).then(res => console.log('res'))
-  }
+    const user = { ...this.state };
+    if (user.answers.length !== 10) {
+      alert('You must answer all of the questions');
+      return;
+    }
+    if (!user.email.length) {
+      alert('You must enter an email');
+      return;
+    }
+    axios
+      .post('http://localhost:5000/api/user', user)
+      .then(res => console.log('res', res));
+  };
 
   render() {
     const questions = [
@@ -130,7 +140,7 @@ class App extends Component {
           value={this.state.email}
           onChange={this.handleInput}
         />
-        <button>Save and Continue</button>
+        <button onClick={this.handleSubmit}>Save and Continue</button>
       </div>
     );
   }
