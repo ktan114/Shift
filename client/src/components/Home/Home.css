@@ -1,0 +1,38 @@
+.Home {
+  width: 80%;
+  display: flex;
+  flex-flow: column wrap;
+}
+.Home__h2 {
+  margin: 0;
+  color: darkblue;
+}
+.Home__p {
+  padding: 0;
+  margin-bottom: 30px;
+}
+.Home__Questionnaire {
+  display: flex;
+  flex-flow: column;
+  width: 70%;
+  align-self: center;
+}
+.Home__Input {
+  border: lightgrey 1px solid;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+.Home__InputBox {
+  width: 70%;
+  height: 30px;
+  margin-bottom: 30px;
+}
+.Home__Button {
+  background: blue;
+  color: white;
+  width: 30%;
+  height: 40px;
+  font-weight: bold;
+  margin: 40px auto;
+}

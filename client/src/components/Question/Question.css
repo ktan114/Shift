@@ -1,11 +1,23 @@
 .Question {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
   border: 1px solid lightgrey;
   width: 100%;
   text-align: center;
 }
 .Question__Buttons {
   display: flex;
-  width: 100%;
+  width: 70%;
   justify-content: space-around;
   align-items: center;
+}
+.Question__Text {
+  color: black;
+}
+.Question__Text--red {
+  color: red;
+}
+.Question__Text--green {
+  color: green;
 }

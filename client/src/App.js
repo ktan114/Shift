@@ -52,7 +52,8 @@ class App extends Component {
     return (
       <div className="App">
         <Route
-          exact path="/"
+          exact
+          path="/"
           render={props => (
             <Home
               handleClick={this.handleClick}
