@@ -19,9 +19,6 @@
   display: flex;
   width: 35%;
 }
-.Result__Bar:nth-child(2n+2) {
-    margin-right: 2%;
-}
 .Result__Indicators {
   width: 50%;
 }
@@ -44,11 +41,11 @@
     font-weight: bold;
 }
 .Result__Indicator--marginLeft1 {
-    margin-left: 2%;
+    margin-left: 1%;
 }
 .Result__Indicator--marginLeft2 {
     margin-left: 4%;
 }
 .Result__Indicator--marginRight {
-    margin-right: 1%;
+    margin-right: 2%;
 }
