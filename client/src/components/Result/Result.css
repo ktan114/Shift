@@ -8,12 +8,12 @@
   border: 1px solid lightgrey;
 }
 .Result__Display {
-    display: flex;
-    flex-flow: column;
-    align-items: flex-start;
+  display: flex;
+  flex-flow: column;
+  align-items: flex-start;
 }
 .Result__h1 {
-    color: darkblue;
+  color: darkblue;
 }
 .Result__Bar {
   display: flex;
@@ -38,14 +38,8 @@
   background: lightgrey;
 }
 .Result p {
-    font-weight: bold;
+  font-weight: bold;
 }
-.Result__Indicator--marginLeft1 {
-    margin-left: 1%;
-}
-.Result__Indicator--marginLeft2 {
-    margin-left: 4%;
-}
-.Result__Indicator--marginRight {
-    margin-right: 2%;
+.Result__Section {
+  width: 23%;
 }

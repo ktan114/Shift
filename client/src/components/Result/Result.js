@@ -25,21 +25,24 @@ const Result = props => {
       </div>
       <div className="Result__Indicators">
         <div className="Result__Indicator">
-          <p>Introversion (I)</p>
+          <p className="Result__Section">Introversion (I)</p>
           {result[0] === 'I' ? leftSide : rightSide}
-          <p>Extraversion (E)</p>
+          <p className="Result__Section">Extraversion (E)</p>
         </div>
         <div className="Result__Indicator">
-          <p>Sensing (S)</p> {result[1] === 'S' ? leftSide : rightSide}
-          <p className="Result__Indicator--marginLeft1">Intuition (N)</p>
+          <p className="Result__Section">Sensing (S)</p>{' '}
+          {result[1] === 'S' ? leftSide : rightSide}
+          <p className="Result__Section">Intuition (N)</p>
         </div>
         <div className="Result__Indicator">
-          <p>Thinking (T)</p> {result[2] === 'T' ? leftSide : rightSide}{' '}
-          <p className="Result__Indicator--marginLeft2">Feeling (F)</p>
+          <p className="Result__Section">Thinking (T)</p>{' '}
+          {result[2] === 'T' ? leftSide : rightSide}{' '}
+          <p className="Result__Section">Feeling (F)</p>
         </div>
         <div className="Result__Indicator">
-          <p className="Result__Indicator--marginRight">Judging (J)</p>{' '}
-          {result[3] === 'J' ? leftSide : rightSide} <p>Perceiving (P)</p>
+          <p className="Result__Section">Judging (J)</p>{' '}
+          {result[3] === 'J' ? leftSide : rightSide}{' '}
+          <p className="Result__Section">Perceiving (P)</p>
         </div>
       </div>
     </div>
