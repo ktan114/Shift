@@ -1,0 +1,7 @@
+.RadioButton {
+  height: 20px;
+  border-radius: 15px;
+  border: 10px solid lightgrey;
+  padding: 10px;
+  background: grey;
+}
