@@ -1,24 +1,47 @@
 import React from 'react';
 import { withRouter } from 'react-router';
 
+import './Result.css';
+
 const Result = props => {
   const { result } = props.location.state;
+  const leftSide = (
+    <div className="Result__Bar">
+      <p className="Result__Side Result__Side--purple" />
+      <p className="Result__Side Result__Side--lightgrey" />
+    </div>
+  );
+  const rightSide = (
+    <div className="Result__Bar">
+      <p className="Result__Side Result__Side--lightgrey" />
+      <p className="Result__Side Result__Side--purple" />
+    </div>
+  );
   return (
-    <div>
-      <h1>Your Perspective</h1>
-      <h1>Your Perspective Type is: {result}</h1>
-      <p>
-        <span>Introversion (I)</span> <span>Extraversion (E)</span>
-      </p>
-      <p>
-        <span>Sensing (S)</span> <span>Intuition (I)</span>
-      </p>
-      <p>
-        <span>Thinking (T)</span> <span>Feeling (F)</span>
-      </p>
-      <p>
-        <span>Judging (J)</span> <span>Perceiving (P)</span>
-      </p>
+    <div className="Result">
+      <div className="Result__Display">
+        <h1 className="Result__h1">Your Perspective</h1>
+        <h3>Your Perspective Type is: {result}</h3>
+      </div>
+      <div className="Result__Indicators">
+        <div className="Result__Indicator">
+          <p>Introversion (I)</p>
+          {result[0] === 'I' ? leftSide : rightSide}
+          <p>Extraversion (E)</p>
+        </div>
+        <div className="Result__Indicator">
+          <p>Sensing (S)</p> {result[1] === 'S' ? leftSide : rightSide}
+          <p className="Result__Indicator--marginLeft1">Intuition (N)</p>
+        </div>
+        <div className="Result__Indicator">
+          <p>Thinking (T)</p> {result[2] === 'T' ? leftSide : rightSide}{' '}
+          <p className="Result__Indicator--marginLeft2">Feeling (F)</p>
+        </div>
+        <div className="Result__Indicator">
+          <p className="Result__Indicator--marginRight">Judging (J)</p>{' '}
+          {result[3] === 'J' ? leftSide : rightSide} <p>Perceiving (P)</p>
+        </div>
+      </div>
     </div>
   );
 };
